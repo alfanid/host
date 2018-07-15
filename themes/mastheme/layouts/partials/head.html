@@ -1,0 +1,28 @@
+<title>{{ .Title }} - {{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{ .Description }}{{end}}</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<!-- Crawling -->
+<meta name="robots" content="index,follow"/>
+<meta name="googlebot" content="index,follow"/>
+<!-- Crawling Juga -->
+<meta name="google-site-verification" content="{{ .Site.Params.google }}"/>
+<meta name="yandex-verification" content="{{ .Site.Params.yandex }}"/>
+<meta name="msvalidate.01" content="{{ .Site.Params.microsoft }}"/>
+<!-- Socmed -->
+<meta property="fb:app_id" content="{{ .Site.Params.appid}}">
+<meta property="og:url" content="{{ .RelPermalink }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:image" content="{{ .Params.Image.src }}">
+<meta property="og:description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{ .Description }}{{end}}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="{{ .Site.Author.name}}">
+<!-- Icon -->
+<link rel="icon" href="/img/icon.png"/>
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/mdb.min.css" rel="stylesheet">
+<link href="/css/style.min.css" rel="stylesheet">

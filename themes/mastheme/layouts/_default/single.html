@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    {{ partial "nav.html" . }}
+    <main>
+      <div class="container">
+        <section class="mt-4">
+          <div class="row">
+            <div class="col-md-8 mb-4">
+              <div class="card mb-4 wow fadeIn">
+                <img src="{{ .Params.Image.src }}" class="img-fluid" alt="">
+              </div>
+              <div class="card mb-4 wow fadeIn">
+                <div class="card-body text-center">
+                  <p class="h5 my-4">{{ .Title }}
+                  </p>
+                  <hr>
+                  {{ .Content }}
+                </div>
+              </div>
+              <div class="card mb-4 wow fadeIn">
+                <div class="card-header font-weight-bold">
+                  <span>About author
+                  </span>
+                  <span class="pull-right">
+                    <a href="">
+                      <i class="fa fa-facebook mr-2">
+                      </i>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-twitter mr-2">
+                      </i>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-instagram mr-2">
+                      </i>
+                    </a>
+                    <a href="">
+                      <i class="fa fa-linkedin mr-2">
+                      </i>
+                    </a>
+                  </span>
+                </div>
+                <div class="card-body">
+                  <div class="media d-block d-md-flex mt-3">
+                    <img class="d-flex mb-3 mx-auto z-depth-1" src="{{ .Site.Author.image }}" alt="Generic placeholder image"
+                         style="width: 100px;">
+                    <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                      <h5 class="mt-0 font-weight-bold">{{ .Site.Author.name }}
+                      </h5>
+                      {{ .Site.Author.bio }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card card-comments mb-3 wow fadeIn">
+                <div class="card-header font-weight-bold">Berkomentarlah dengan adab
+                </div>
+                <div class="card-body">
+                  {{ partial "disqus.html" . }}
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  {{ partial "footer.html" . }}
+  </body>
+</html>

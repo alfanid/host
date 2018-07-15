@@ -1,0 +1,28 @@
+<main>
+  <section>
+    <article class="card-post">
+      <div class="container">
+        <div class="row">
+          {{ $paginator := .Paginate (where .Data.Pages "Type" "post") 6 }}
+          {{ range $paginator.Pages }}
+          <div class="col-md-4 mb-4 d-flex">
+            <div class="card">
+              <a href="{{ .RelPermalink }}">
+                <img class='card-img-top' 
+                     src='{{ .Params.Image.src }}'
+                     alt='{{ .Title }}'>
+              </a>
+              <div class="card-body">
+                <h4 style="text-align: center;" class="card-title">
+                  {{ .Title }}
+                </h4>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </article>
+  </section>
+  <br>
+</main>
